@@ -67,6 +67,8 @@
                             <button type="submit" class="btn btn-outline-primary">SIMPAN DATA</button>
 
                             <button type="reset" class="btn btn-outline-dark">RESET DATA</button>
+
+                            <button type="reset" class="btn btn-outline-info" onclick="goback()">KEMBALI</button>
                         </form>
                     </div>
                 </div>
@@ -79,6 +81,12 @@
     <script src="https://cdn.ckeditor.com/4.22.1/standard/ckeditor.js"></script>
     <script>
         CKEDITOR.replace('content');
+    </script>
+    <script>
+        function goback()
+        {
+            window.history.back();
+        }
     </script>
 </body>
 

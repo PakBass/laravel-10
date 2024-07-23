@@ -33,13 +33,13 @@
                             <tBody>
                                 @forelse ($posts as $post)
                                     <tr>
-                                        <td class="text-center">
+                                        <td class="text-center align-middle">
                                             <img src="{{ asset('/storage/posts/' . $post->image) }}" class="rounded"
                                                 style="150px" alt="">
                                         </td>
-                                        <td>{{ $post->title }}</td>
-                                        <td>{!! $post->content !!}</td>
-                                        <td class="text-center">
+                                        <td class="align-middle">{{ $post->title }}</td>
+                                        <td class="align-middle">{!! $post->content !!}</td>
+                                        <td class="text-center align-middle">
                                             <form action="{{ route('posts.destroy', $post->id) }}" method="POST"
                                                 onclick="return confirm('Apakah anda yakin ?');">
                                                 <a href="{{ route('posts.show', $post->id) }}"
@@ -71,14 +71,15 @@
     </script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    @if(session('success'))
+    @if (session('success'))
         <script>
             document.addEventListener('DOMContentLoaded', function() {
                 Swal.fire({
-                    icon: 'success',
-                    title: 'Data Berhasil DIsimpan',
-                    timer: 3000,
-                    showConfirmButton: false
+                    position: "top-end",
+                    icon: "success",
+                    title: "Data berhasil disimpan",
+                    showConfirmButton: false,
+                    timer: 3000
                 });
             });
         </script>
