@@ -18,7 +18,7 @@
                         <form action="{{ route('posts.store') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group">
-                                <label class="font-weight-bold">GAMBAR</label>
+                                <label class="font-weight-bold mb-2">GAMBAR</label>
                                 <input type="file" name="image"
                                     class="form-control @error('image')
                                     is-invalid
@@ -33,7 +33,7 @@
                             </div>
 
                             <div class="form-group">
-                                <label class="font-weight-bold">JUDUL</label>
+                                <label class="font-weight-bold mb-2">JUDUL</label>
                                 <input type="text" name="title"
                                     class="form-control @error('title')
                                     is-invalid
@@ -49,7 +49,7 @@
                             </div>
 
                             <div class="form-group">
-                                <label class="font-weight-bold">KONTEN</label>
+                                <label class="font-weight-bold mb-2">KONTEN</label>
                                 <textarea name="content"
                                     class="form-control 
                                 @error('content')

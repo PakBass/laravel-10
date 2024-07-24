@@ -40,15 +40,15 @@
                                         <td class="align-middle">{{ $post->title }}</td>
                                         <td class="align-middle">{!! $post->content !!}</td>
                                         <td class="text-center align-middle">
-                                            <form action="{{ route('posts.destroy', $post->id) }}" method="POST"
-                                                onclick="return confirm('Apakah anda yakin ?');">
+                                            <form onsubmit="return confirm('Apakah Anda Yakin ?');"
+                                                action="{{ route('posts.destroy', $post->id) }}" method="POST">
                                                 <a href="{{ route('posts.show', $post->id) }}"
-                                                    class="btn btn-dark">View</a>
+                                                    class="btn btn-sm btn-dark">SHOW</a>
                                                 <a href="{{ route('posts.edit', $post->id) }}"
-                                                    class="btn btn-warning">Edit</a>
+                                                    class="btn btn-sm btn-primary">EDIT</a>
                                                 @csrf
                                                 @method('DELETE')
-                                                <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                                                <button type="submit" class="btn btn-sm btn-danger">HAPUS</button>
                                             </form>
                                         </td>
                                     </tr>
