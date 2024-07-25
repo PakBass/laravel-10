@@ -31,7 +31,7 @@
                         <p class="card-text">
                             {!! $post->content !!}
                         </p>
-                        <button type="submit" class="btn btn-outline-dark" onclick="goback()">KEMBALI</button>
+                        <button type="reset" class="btn btn-outline-dark" onclick="goback()">KEMBALI</button>
                     </div>
                 </div>
             </div>
