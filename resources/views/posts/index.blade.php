@@ -34,20 +34,20 @@
                                 @forelse ($posts as $post)
                                     <tr>
                                         <td class="text-center align-middle">
-                                            <img src="{{ asset('/storage/posts/' . $post->image) }}" class="rounded"style="150px" alt="">
+                                            <img src="{{ asset('/storage/posts/' . $post->image) }}"
+                                                class="rounded"style="150px" alt="">
                                         </td>
                                         <td class="align-middle">{{ $post->title }}</td>
                                         <td class="align-middle">{!! $post->content !!}</td>
                                         <td class="text-center align-middle">
-                                            <form onsubmit="return confirm('Apakah Anda Yakin ?');"
-                                                action="{{ route('posts.destroy', $post->id) }}" method="POST">
+                                            <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{ route('posts.destroy', $post->id) }}" method="POST">
                                                 <a href="{{ route('posts.show', $post->id) }}"
                                                     class="btn btn-sm btn-dark">SHOW</a>
                                                 <a href="{{ route('posts.edit', $post->id) }}"
                                                     class="btn btn-sm btn-primary">EDIT</a>
                                                 @csrf
                                                 @method('DELETE')
-                                                <button type="submit" class="btn btn-sm btn-danger">HAPUS</button>
+                                                <button type="submit" class="btn btn-sm btn-danger" id="deleteButton">HAPUS</button>
                                             </form>
                                         </td>
                                     </tr>
@@ -77,6 +77,30 @@
                     position: "top-end",
                     icon: "success",
                     title: "Data berhasil disimpan",
+                    showConfirmButton: false,
+                    timer: 3000
+                });
+            });
+        </script>
+    @elseif (session('update'))
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: "Data berhasil update",
+                    showConfirmButton: false,
+                    timer: 3000
+                });
+            });
+        </script>
+    @elseif (session('hapus'))
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                Swal.fire({
+                    position: "top-end",
+                    icon: "warning",
+                    title: "Data berhasil hapus",
                     showConfirmButton: false,
                     timer: 3000
                 });
